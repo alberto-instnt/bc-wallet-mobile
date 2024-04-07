@@ -15,7 +15,6 @@ pc-api*.json
 api*.json
 *secret*
 *secrets*
-.env
 .idea/
 
 # Other
