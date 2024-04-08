@@ -117,6 +117,7 @@ export class AppConsoleLogger implements Logger {
   public logLevel: LogLevel
   public credentials: any
   public logBuffer: any
+  public applicationInfo: any
   public maxSize: number
   public flushInterval: number
   public logs: any
@@ -135,16 +136,19 @@ export class AppConsoleLogger implements Logger {
   public constructor(
     logLevel: LogLevel = LogLevel.off,
     enableRemoteLog: RemoteLogLevel = RemoteLogLevel.disable,
-    credentials: any
+    credentials: any,
+    applicationInfo: any
   ) {
     this.logLevel = logLevel
     this.remoteLogLevel = enableRemoteLog
     this.credentials = credentials
+    this.applicationInfo = applicationInfo
     /** Buffer Logs Implementation*/
     this.maxSize = 15
     this.flushInterval = 5000
     this.logs = []
     this.flushTimer = null
+    this.includeDeviceInfo()
     this.startFlushTimer()
     /** --------------  */
   }
@@ -172,6 +176,18 @@ export class AppConsoleLogger implements Logger {
     this.flushTimer = setInterval(() => {
       this.flushLogs()
     }, this.flushInterval)
+  }
+
+  public includeDeviceInfo() {
+    if (this.remoteLogLevel === RemoteLogLevel.enable) {
+      const devicePayload = {
+        logLevel: this.consoleLogMap[LogLevel.debug],
+        message: 'Application info',
+        data: JSON.stringify(this.applicationInfo),
+      }
+      this.addLog(JSON.stringify(devicePayload))
+    }
+    console.log('Application info', this.applicationInfo)
   }
 
   public test(message: string, data?: Record<string, any>): void {
