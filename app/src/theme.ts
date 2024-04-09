@@ -701,8 +701,10 @@ export const Assets: IAssets = {
     },
     logoPrimary: {
       src: require('./assets/img/InstntLogoOnly-old2-1.png'),
+      aspectRatio: 1,
       height: 80,
-      width: 80,
+      width: 60,
+      resizeMode: 'contain',
     },
   },
 }
