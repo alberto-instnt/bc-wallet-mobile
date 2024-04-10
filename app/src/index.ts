@@ -82,17 +82,17 @@ const configuration: ConfigurationContext = {
   useCustomNotifications: useNotifications,
   useAttestation: useAttestation,
   enableUseMultUseInvitation: false,
-  enablePushNotifications: {
-    status: status,
-    setup: setup,
-    toggle: async (state: boolean, agent: Agent) => {
-      if (state) {
-        await activate(agent)
-      } else {
-        await deactivate(agent)
-      }
-    },
-  },
+  // enablePushNotifications: {
+  //   status: status,
+  //   setup: setup,
+  //   toggle: async (state: boolean, agent: Agent) => {
+  //     if (state) {
+  //       await activate(agent)
+  //     } else {
+  //       await deactivate(agent)
+  //     }
+  //   },
+  // },
   whereToUseWalletUrl: 'https://www2.gov.bc.ca/gov/content/governments/government-id/bc-wallet#where',
   getCredentialHelpDictionary: [
     {
