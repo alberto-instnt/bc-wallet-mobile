@@ -76,7 +76,7 @@ const configuration: ConfigurationContext = {
     description: 'PersonCredentialNotification.Description',
     buttonTitle: 'PersonCredentialNotification.ButtonTitle',
   },
-  enableTours: true,
+  enableTours: false,
   showPreface: false,
   disableOnboardingSkip: true,
   useCustomNotifications: useNotifications,
