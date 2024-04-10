@@ -29,13 +29,13 @@ import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StyleSheet, View, Text, Image, useWindowDimensions, ScrollView } from 'react-native'
 import { Config } from 'react-native-config'
-// import {
-//   getVersion,
-//   getBuildNumber,
-//   getApplicationName,
-//   getSystemName,
-//   getSystemVersion,
-// } from 'react-native-device-info'
+import {
+  getVersion,
+  getBuildNumber,
+  getApplicationName,
+  getSystemName,
+  getSystemVersion,
+} from 'react-native-device-info'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 // import ProgressBar from '../components/ProgressBar'
@@ -313,6 +313,12 @@ const Splash = () => {
         // const logger = new RemoteLogger(logOptions)
         // logger.startEventListeners()
 
+        const applicationInfo = {
+          version: `${getVersion()}-${getBuildNumber()}`,
+          system: `${getSystemName()} v${getSystemVersion()}`,
+          application: getApplicationName().toLowerCase(),
+        }
+
         const options = {
           config: {
             label: store.preferences.walletName || 'Instnt Wallet',
@@ -320,7 +326,7 @@ const Splash = () => {
               id: credentials.id,
               key: credentials.key,
             },
-            logger: new AppConsoleLogger(LogLevel.debug, RemoteLogLevel.enable, credentials),
+            logger: new AppConsoleLogger(LogLevel.debug, RemoteLogLevel.enable, credentials, applicationInfo),
             mediatorPickupStrategy: MediatorPickupStrategy.Implicit,
             autoUpdateStorageOnStartup: true,
             autoAcceptConnections: true,

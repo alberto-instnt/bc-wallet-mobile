@@ -58,7 +58,7 @@ const GrayscaleColors: IGrayscaleColors = {
 }
 
 const BrandColors: IBrandColors = {
-  primary: '#000000',
+  primary: '#ff2160',
   primaryDisabled: `#757575`,
   secondary: '#FFFFFF',
   secondaryDisabled: `#757575`,
@@ -701,8 +701,10 @@ export const Assets: IAssets = {
     },
     logoPrimary: {
       src: require('./assets/img/InstntLogoOnly-old2-1.png'),
+      aspectRatio: 1,
       height: 80,
-      width: 80,
+      width: 60,
+      resizeMode: 'contain',
     },
   },
 }
