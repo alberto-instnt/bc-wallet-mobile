@@ -91,7 +91,7 @@ export default function AddCredentialSlider() {
       (c) => c.metadata.data[AnonCredsCredentialMetadataKey].credentialDefinitionId as string
     )
 
-    setShowGetPersonCredential(showPersonCredentialSelector(credentialDefinitionIDs))
+    //setShowGetPersonCredential(showPersonCredentialSelector(credentialDefinitionIDs))
   }, [credentials])
 
   useEffect(() => {

@@ -60,26 +60,26 @@ const configuration: ConfigurationContext = {
   record: Record,
   indyLedgers: selectedLedgers,
   settings: [],
-  customNotification: {
-    component: PersonCredential,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    onCloseAction: (dispatch?: React.Dispatch<ReducerAction<any>>) => {
-      if (dispatch) {
-        dispatch({
-          type: BCDispatchAction.PERSON_CREDENTIAL_OFFER_DISMISSED,
-          payload: [{ personCredentialOfferDismissed: true }],
-        })
-      }
-    },
-    pageTitle: 'PersonCredential.PageTitle',
-    title: 'PersonCredentialNotification.Title',
-    description: 'PersonCredentialNotification.Description',
-    buttonTitle: 'PersonCredentialNotification.ButtonTitle',
-  },
+  // customNotification: {
+  //   component: PersonCredential,
+  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //   onCloseAction: (dispatch?: React.Dispatch<ReducerAction<any>>) => {
+  //     if (dispatch) {
+  //       dispatch({
+  //         type: BCDispatchAction.PERSON_CREDENTIAL_OFFER_DISMISSED,
+  //         payload: [{ personCredentialOfferDismissed: true }],
+  //       })
+  //     }
+  //   },
+  //   pageTitle: 'PersonCredential.PageTitle',
+  //   title: 'PersonCredentialNotification.Title',
+  //   description: 'PersonCredentialNotification.Description',
+  //   buttonTitle: 'PersonCredentialNotification.ButtonTitle',
+  // },
   enableTours: false,
   showPreface: false,
   disableOnboardingSkip: true,
-  useCustomNotifications: useNotifications,
+  //useCustomNotifications: useNotifications,
   useAttestation: useAttestation,
   enableUseMultUseInvitation: false,
   // enablePushNotifications: {
