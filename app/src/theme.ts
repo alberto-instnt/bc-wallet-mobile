@@ -664,7 +664,7 @@ export const DialogTheme = {
 }
 
 const LoadingTheme = {
-  backgroundColor: ColorPallet.brand.primary,
+  backgroundColor: ColorPallet.brand.primaryBackground,
 }
 const PINEnterTheme = {
   image: {
