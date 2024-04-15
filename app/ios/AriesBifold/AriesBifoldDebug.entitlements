@@ -6,6 +6,8 @@
 	<array>
 		<string>applinks:dev2-api.instnt.org</string>
 		<string>applinks:stage-api.instnt.org</string>
+		<string>applinks:localhost</string>
+		<string>applinks:3.89.17.95</string>
 	</array>
 </dict>
 </plist>
