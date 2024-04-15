@@ -13,7 +13,7 @@ import {
 import React from 'react'
 import { StyleSheet } from 'react-native'
 
-import Logo from './assets/img/logo-with-text.svg'
+import Logo from './assets/img/InstntLogoOnly-old2-text.svg'
 
 export const borderRadius = 4
 export const heavyOpacity = 0.7
@@ -68,8 +68,8 @@ const BrandColors: IBrandColors = {
   secondaryBackground: '#000000',
   modalPrimary: '#003366',
   modalSecondary: '#FFFFFFFF',
-  modalPrimaryBackground: '#FFFFFF',
-  modalSecondaryBackground: '#F2F2F2',
+  modalPrimaryBackground: '#000000',
+  modalSecondaryBackground: '#000000',
   modalIcon: GrayscaleColors.darkGrey,
   link: '#FFFFFF',
   unorderedList: GrayscaleColors.darkGrey,
@@ -664,7 +664,7 @@ export const DialogTheme = {
 }
 
 const LoadingTheme = {
-  backgroundColor: ColorPallet.brand.primary,
+  backgroundColor: ColorPallet.brand.primaryBackground,
 }
 const PINEnterTheme = {
   image: {
