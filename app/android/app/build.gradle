@@ -93,7 +93,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.instnt.access.wallet"
+        applicationId "org.instnt.multipass"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 1

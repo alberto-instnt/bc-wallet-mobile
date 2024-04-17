@@ -1,4 +1,4 @@
-package org.instnt.access.wallet;
+package org.instnt.multipass;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
