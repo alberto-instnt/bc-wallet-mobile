@@ -199,7 +199,7 @@ export class AppConsoleLogger implements Logger {
       }
       this.addLog(JSON.stringify(testPayload))
     }
-    console.log(message, data)
+    data ? console.log(message, data) : console.log(message)
   }
 
   public trace(message: string, data?: Record<string, any>): void {
@@ -211,7 +211,7 @@ export class AppConsoleLogger implements Logger {
       }
       this.addLog(JSON.stringify(tracePayload))
     }
-    console.log(message, data)
+    data ? console.log(message, data) : console.log(message)
   }
 
   public debug(message: string, data?: Record<string, any>): void {
@@ -223,7 +223,7 @@ export class AppConsoleLogger implements Logger {
       }
       this.addLog(JSON.stringify(debugPayload))
     }
-    console.debug(message, data)
+    data ? console.debug(message, data) : console.debug(message)
   }
 
   public info(message: string, data?: Record<string, any>): void {
@@ -235,7 +235,7 @@ export class AppConsoleLogger implements Logger {
       }
       this.addLog(JSON.stringify(infoPayload))
     }
-    console.info(message, data)
+    data ? console.info(message, data) : console.info(message)
   }
   public warn(message: string, data?: Record<string, any>): void {
     if (this.remoteLogLevel === RemoteLogLevel.enable) {
@@ -246,7 +246,7 @@ export class AppConsoleLogger implements Logger {
       }
       this.addLog(JSON.stringify(warnPayload))
     }
-    console.warn(message, data)
+    data ? console.warn(message, data) : console.warn(message)
   }
   public error(message: string, data?: Record<string, any>): void {
     if (this.remoteLogLevel === RemoteLogLevel.enable) {
@@ -257,7 +257,7 @@ export class AppConsoleLogger implements Logger {
       }
       this.addLog(JSON.stringify(errorPayload))
     }
-    console.error(message, data)
+    data ? console.error(message, data) : console.error(message)
   }
 
   public fatal(message: string, data?: Record<string, any>): void {
@@ -269,7 +269,7 @@ export class AppConsoleLogger implements Logger {
       }
       this.addLog(JSON.stringify(fatalPayload))
     }
-    console.log(message, data)
+    data ? console.log(message, data) : console.log(message)
   }
 
   public log(level: Exclude<LogLevel, LogLevel.off>, message: string, data?: Record<string, any>): void {
