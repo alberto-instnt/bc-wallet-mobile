@@ -190,6 +190,9 @@ const translation = {
     "SessionID": "Session ID",
     "Banner": "Remote Troubleshoot on. ID: {{ sessionId }}"
   },
+  "Home":{
+    "Welcome": "Instnt Access",
+  }
 }
 
 export default translation

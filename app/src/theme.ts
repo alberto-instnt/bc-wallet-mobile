@@ -13,7 +13,7 @@ import {
 import React from 'react'
 import { StyleSheet } from 'react-native'
 
-import Logo from './assets/img/InstntLogoOnly-old2-text.svg'
+import Logo from './assets/img/logo.svg'
 
 export const borderRadius = 4
 export const heavyOpacity = 0.7
@@ -59,9 +59,9 @@ const GrayscaleColors: IGrayscaleColors = {
 
 const BrandColors: IBrandColors = {
   primary: '#ff2160',
-  primaryDisabled: `#757575`,
+  primaryDisabled: `rgba(117, 7, 238, ${lightOpacity})`,
   secondary: '#FFFFFF',
-  secondaryDisabled: `#757575`,
+  secondaryDisabled: `rgba(53, 130, 63, ${heavyOpacity})`,
   primaryLight: '#D9EAF7',
   highlight: '#FFC200',
   primaryBackground: '#000000',
@@ -702,8 +702,8 @@ export const Assets: IAssets = {
     logoPrimary: {
       src: require('./assets/img/InstntLogoOnly-old2-1.png'),
       aspectRatio: 1,
-      height: 80,
-      width: 60,
+      height: 100,
+      width: 80,
       resizeMode: 'contain',
     },
   },

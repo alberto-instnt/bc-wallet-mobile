@@ -189,6 +189,9 @@ const translation = {
     "SessionID": "Session ID (FR)",
     "Banner": "Remote Troubleshoot on. ID: {{ sessionId }} (FR)",
   },
+  "Home":{
+    "Welcome": "Instnt Access",
+  }
 }
 
 export default translation
