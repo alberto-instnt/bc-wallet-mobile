@@ -48,7 +48,7 @@ const configuration: ConfigurationContext = {
   terms: Terms,
   preface: Preface,
   homeHeaderView: HomeHeaderView,
-  // homeFooterView: HomeFooterView,
+  //homeFooterView: HomeFooterView,
   credentialListHeaderRight: AddCredentialButton,
   credentialListOptions: AddCredentialSlider,
   credentialEmptyList: EmptyList,
