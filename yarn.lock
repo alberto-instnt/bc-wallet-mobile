@@ -7980,6 +7980,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"appcenter-analytics@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "appcenter-analytics@npm:5.0.1"
+  dependencies:
+    appcenter: "npm:5.0.1"
+  checksum: 80f22e3a77b82de637af74754bc8cc1b878ef86393bfe64777f1e94bcaa3874fc7ae541f74ae0ce6453242cff0ec91e66a800b35236f62e4c8df9c470874386a
+  languageName: node
+  linkType: hard
+
+"appcenter-crashes@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "appcenter-crashes@npm:5.0.1"
+  dependencies:
+    appcenter: "npm:5.0.1"
+  checksum: e8d1babb063ec17344b5690ce5c992aca78a3b6728dce055b3f132172c2963fd5915d9cfc5339c2566d6e54f92a42d259071dedbc69dac595c412bfaf2430568
+  languageName: node
+  linkType: hard
+
 "appcenter-file-upload-client@npm:0.1.0":
   version: 0.1.0
   resolution: "appcenter-file-upload-client@npm:0.1.0"
@@ -7988,6 +8006,29 @@ __metadata:
     superagent: "npm:5.1.0"
     url-parse: "npm:^1.4.7"
   checksum: 218a72fb01a0d60de9830547b985fa51cc2722b41710d08db0cb6404fb7e5b1b241cd394b3949ee2675e08e309b4ec2295d686dd8b408b3cd2496c71dd222161
+  languageName: node
+  linkType: hard
+
+"appcenter-link-scripts@npm:5.0.1":
+  version: 5.0.1
+  resolution: "appcenter-link-scripts@npm:5.0.1"
+  dependencies:
+    debug: "npm:4.3.1"
+    glob: "npm:5.0.15"
+    mkdirp: "npm:0.5.3"
+    plist: "npm:^3.0.2"
+    which: "npm:1.2.11"
+    xcode: "npm:2.0.0"
+  checksum: f4aba59b2607f6fc14fbaf17170e76de383281e0903e4f9f38f43f5607fa8e0f38291db0d0f743ad122c7b448a7b3f201501956851afdd670b014a66993d547b
+  languageName: node
+  linkType: hard
+
+"appcenter@npm:5.0.1, appcenter@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "appcenter@npm:5.0.1"
+  dependencies:
+    appcenter-link-scripts: "npm:5.0.1"
+  checksum: 9bb3dd9c3508ed9fbfb54aca2fb4881641d25a869f011f6fa584dc080ee21b7a91509a821b7a2270642973a9d0b9b2085d2b0d6e2705a740e1a13520ad1413d0
   languageName: node
   linkType: hard
 
@@ -9173,6 +9214,9 @@ __metadata:
     "@types/react-test-renderer": "npm:18.0.1"
     "@typescript-eslint/eslint-plugin": "npm:6.6.0"
     "@typescript-eslint/parser": "npm:6.6.0"
+    appcenter: "npm:^5.0.1"
+    appcenter-analytics: "npm:^5.0.1"
+    appcenter-crashes: "npm:^5.0.1"
     axios: "npm:1.4.0"
     babel-jest: "npm:27.5.1"
     babel-plugin-module-resolver: "npm:5.0.0"
@@ -11272,6 +11316,18 @@ __metadata:
     supports-color:
       optional: true
   checksum: 0073c3bcbd9cb7d71dd5f6b55be8701af42df3e56e911186dfa46fac3a5b9eb7ce7f377dd1d3be6db8977221f8eb333d945216f645cf56f6b688cd484837d255
+  languageName: node
+  linkType: hard
+
+"debug@npm:4.3.1":
+  version: 4.3.1
+  resolution: "debug@npm:4.3.1"
+  dependencies:
+    ms: "npm:2.1.2"
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 37b9f90428b65e59eb47f74435a9fc73dcb46b3550e838c0037ac05910f689bd59fd1d4a51154c1df3471a2f3e5926af8880cbe9f9f3b68beb7b2f8197a26f4a
   languageName: node
   linkType: hard
 
@@ -14064,6 +14120,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:5.0.15":
+  version: 5.0.15
+  resolution: "glob@npm:5.0.15"
+  dependencies:
+    inflight: "npm:^1.0.4"
+    inherits: "npm:2"
+    minimatch: "npm:2 || 3"
+    once: "npm:^1.3.0"
+    path-is-absolute: "npm:^1.0.0"
+  checksum: 4a1f2401329d94b5c25c6ac16276aceccc52b865bd9b2b9198da21fc937d021bfd87463ae44de9a9e4794894a49bc619ebaf7e5b12182bcf97e2ceb68ae116d7
+  languageName: node
+  linkType: hard
+
 "glob@npm:7.1.6":
   version: 7.1.6
   resolution: "glob@npm:7.1.6"
@@ -15671,6 +15740,13 @@ __metadata:
   version: 2.0.5
   resolution: "isarray@npm:2.0.5"
   checksum: 1d8bc7911e13bb9f105b1b3e0b396c787a9e63046af0b8fe0ab1414488ab06b2b099b87a2d8a9e31d21c9a6fad773c7fc8b257c4880f2d957274479d28ca3414
+  languageName: node
+  linkType: hard
+
+"isexe@npm:^1.1.1":
+  version: 1.1.2
+  resolution: "isexe@npm:1.1.2"
+  checksum: e4edd360b750e3b1aaf847e81b586655661b6be5033a6b843b0cca59f429f33833ad199302070e3bce5c517eaa93d74fc33560eb18d8ff25ff5e5899af4be466
   languageName: node
   linkType: hard
 
@@ -17941,21 +18017,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:2 || 3, minimatch@npm:^3.0.2, minimatch@npm:^3.0.3, minimatch@npm:^3.0.4, minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "minimatch@npm:3.1.2"
+  dependencies:
+    brace-expansion: "npm:^1.1.7"
+  checksum: e0b25b04cd4ec6732830344e5739b13f8690f8a012d73445a4a19fbc623f5dd481ef7a5827fde25954cd6026fede7574cc54dc4643c99d6c6b653d6203f94634
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:3.0.4":
   version: 3.0.4
   resolution: "minimatch@npm:3.0.4"
   dependencies:
     brace-expansion: "npm:^1.1.7"
   checksum: 3b3f17f76582417dd139646505f1d1bb5f148ea5191eb98fe73cd41224a678dadb94cc674c7d06b36de4ab5c303f039cfd7cd2d089348d6f70d04db169cf3770
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^3.0.2, minimatch@npm:^3.0.3, minimatch@npm:^3.0.4, minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "minimatch@npm:3.1.2"
-  dependencies:
-    brace-expansion: "npm:^1.1.7"
-  checksum: e0b25b04cd4ec6732830344e5739b13f8690f8a012d73445a4a19fbc623f5dd481ef7a5827fde25954cd6026fede7574cc54dc4643c99d6c6b653d6203f94634
   languageName: node
   linkType: hard
 
@@ -17988,7 +18064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.0, minimist@npm:^1.2.6":
+"minimist@npm:^1.2.0, minimist@npm:^1.2.5, minimist@npm:^1.2.6":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
   checksum: 908491b6cc15a6c440ba5b22780a0ba89b9810e1aea684e253e43c4e3b8d56ec1dcdd7ea96dde119c29df59c936cde16062159eae4225c691e19c70b432b6e6f
@@ -18114,6 +18190,17 @@ __metadata:
     for-in: "npm:^0.1.3"
     is-extendable: "npm:^0.1.1"
   checksum: 7d0eb7c2f06435fcc01d132824b4c973a0df689a117d8199d79911b506363b6f4f86a84458a63f3acfa7388f3052612cfe27105400b4932678452925a9739a4c
+  languageName: node
+  linkType: hard
+
+"mkdirp@npm:0.5.3":
+  version: 0.5.3
+  resolution: "mkdirp@npm:0.5.3"
+  dependencies:
+    minimist: "npm:^1.2.5"
+  bin:
+    mkdirp: bin/cmd.js
+  checksum: 7c63182c26bd48d2fa3e65f0c9d2b146d62ae5843f7d04af37e4530ff4c7a116b2649d0ce75a51efc54a514a6b7251368e471cecb1cc6a0e316a1ef119a3374f
   languageName: node
   linkType: hard
 
@@ -19404,7 +19491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plist@npm:^3.0.4":
+"plist@npm:^3.0.2, plist@npm:^3.0.4":
   version: 3.1.0
   resolution: "plist@npm:3.1.0"
   dependencies:
@@ -22216,7 +22303,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-plist@npm:^1.1.0":
+"simple-plist@npm:^1.0.0, simple-plist@npm:^1.1.0":
   version: 1.4.0
   resolution: "simple-plist@npm:1.4.0"
   dependencies:
@@ -24629,6 +24716,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"which@npm:1.2.11":
+  version: 1.2.11
+  resolution: "which@npm:1.2.11"
+  dependencies:
+    isexe: "npm:^1.1.1"
+  bin:
+    which: ./bin/which
+  checksum: e29467ed9d6228cfddc1955adecb74612b1a451b8c72a59e089f4b34cc360cfd38e8ba6bf205dc18bbaf932943914a820530f08117bb226b8716264db92ff041
+  languageName: node
+  linkType: hard
+
 "which@npm:^1.2.9, which@npm:^1.3.1":
   version: 1.3.1
   resolution: "which@npm:1.3.1"
@@ -24803,6 +24901,16 @@ __metadata:
     utf-8-validate:
       optional: true
   checksum: 1769532b6fdab9ff659f0b17810e7501831d34ecca23fd179ee64091dd93a51f42c59f6c7bb4c7a384b6c229aca8076fb312aa35626257c18081511ef62a161d
+  languageName: node
+  linkType: hard
+
+"xcode@npm:2.0.0":
+  version: 2.0.0
+  resolution: "xcode@npm:2.0.0"
+  dependencies:
+    simple-plist: "npm:^1.0.0"
+    uuid: "npm:^3.3.2"
+  checksum: 9a4647c1917b611cf8dcd77f78e9fe1103a2527fc0d9799d1eba2e5e5221de4dcf1b95b3d7e28995abfc5d35f93cc523c0ce70790277b10befa1397db495eb85
   languageName: node
   linkType: hard
 
