@@ -24,7 +24,7 @@ import { useNavigation } from '@react-navigation/native'
 import React, { useEffect, useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Linking, StatusBar } from 'react-native'
-// import codePush from 'react-native-code-push'
+import codePush from 'react-native-code-push'
 import { isTablet } from 'react-native-device-info'
 import Orientation from 'react-native-orientation-locker'
 import SplashScreen from 'react-native-splash-screen'
@@ -49,14 +49,14 @@ initLanguages(localization)
 const bifoldContainer = new MainContainer(container.createChildContainer()).init()
 const bcwContainer = new AppContainer(bifoldContainer).init()
 
-// const codePushOptions = {
-//   checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
-//   installMode: codePush.InstallMode.IMMEDIATE,
-//   updateDialog: {
-//     appendReleaseDescription: true,
-//     title: 'A new update is available!',
-//   },
-// }
+const codePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+  installMode: codePush.InstallMode.IMMEDIATE,
+  updateDialog: {
+    appendReleaseDescription: true,
+    title: 'A new update is available!',
+  },
+}
 
 const App = () => {
   useMemo(() => {
@@ -184,5 +184,4 @@ const App = () => {
   )
 }
 
-// export default codePush(codePushOptions)(App)
-export default App
+export default codePush(codePushOptions)(App)
