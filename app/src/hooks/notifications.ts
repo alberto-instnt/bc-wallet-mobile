@@ -112,7 +112,9 @@ export const useNotifications = (): Notifications => {
     ...revoked,
   ].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
 
-  notifications = [...custom, ...notifications]
+  //notifications = [...custom, ...notifications]
+
+  notifications = [...notifications]
 
   return { total: notifications.length, notifications }
 }
