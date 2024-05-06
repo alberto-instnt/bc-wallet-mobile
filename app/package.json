@@ -40,7 +40,7 @@
     "postinstall": "react-native setup-ios-permissions && pod-install --non-interactive",
     "gradle:write-locks": "cd android && ./gradlew app:dependencies --write-locks",
     "codePush-Production-android": "appcenter codepush release-react -a Instnt_inc/Instnt Multipass App -d Production",
-    "codePush-Staging-android": "appcenter codepush release-react -a Instnt_inc/Instnt Multipass App -d Staging"
+    "codePush-Staging-android": "appcenter codepush release-react -a Instnt_inc/InstntMultipassTest -d Alpha"
   },
   "dependencies": {
     "@aries-framework/anoncreds": "0.4.2",

@@ -96,8 +96,10 @@ android {
         applicationId "org.instnt.multipass"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 1
-        versionName System.getenv("VERSION_NAME") ? System.getenv("VERSION_NAME").toString() : "0.0.1"
+        //versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 1
+        //versionName System.getenv("VERSION_NAME") ? System.getenv("VERSION_NAME").toString() : "0.0.1"
+        versionCode 1
+        versionName "0.0.1"
 
         missingDimensionStrategy 'react-native-camera', 'general'
         resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
@@ -143,7 +145,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
         release {
-            resValue "string", "CodePushDeploymentKey", '"Q3LTxzl44yUNB2n2s_XuInLDsC__ix2id4zux"'
+            resValue "string", "CodePushDeploymentKey", '"5G95Jf5-cWL-8WZkR5FwY-Sfxdld860CcMhlF"'
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.release
