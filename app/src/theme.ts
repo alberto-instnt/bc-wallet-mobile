@@ -13,7 +13,7 @@ import {
 import React from 'react'
 import { StyleSheet } from 'react-native'
 
-import Logo from './assets/img/logo-with-text.svg'
+import Logo from './assets/img/logo.svg'
 
 export const borderRadius = 4
 export const heavyOpacity = 0.7
@@ -24,33 +24,33 @@ export const borderWidth = 2
 
 const SemanticColors: ISemanticColors = {
   error: '#D8292F',
-  success: '#2E8540',
+  success: '#000000',
   focus: '#3399FF',
 }
 
 const NotificationColors: INotificationColors = {
-  success: '#DFF0D8',
-  successBorder: '#D6E9C6',
-  successIcon: '#2D4821',
-  successText: '#2D4821',
-  info: '#D9EAF7',
-  infoBorder: '#B9CEDE',
-  infoIcon: '#313132',
-  infoText: '#313132',
-  warn: '#F9F1C6',
-  warnBorder: '#FAEBCC',
-  warnIcon: '#6C4A00',
-  warnText: '#6C4A00',
-  error: '#F2DEDE',
-  errorBorder: '#EBCCD1',
-  errorIcon: '#A12622',
-  errorText: '#A12622',
+  success: '#313132',
+  successBorder: '#000000',
+  successIcon: '#000000',
+  successText: '#FFFFFF',
+  info: '#000000',
+  infoBorder: '#FFFFFF',
+  infoIcon: '#0099FF',
+  infoText: '#FFFFFF',
+  warn: '#313132',
+  warnBorder: '#FCBA19',
+  warnIcon: '#FCBA19',
+  warnText: '#FFFFFF',
+  error: '#313132',
+  errorBorder: '#D8292F',
+  errorIcon: '#D8292F',
+  errorText: '#FFFFFF',
   popupOverlay: `rgba(0, 0, 0, ${mediumOpacity})`,
 }
 
 const GrayscaleColors: IGrayscaleColors = {
   black: '#000000',
-  darkGrey: '#313132',
+  darkGrey: '#FFFFFF',
   mediumGrey: '#606060',
   lightGrey: '#D3D3D3',
   veryLightGrey: '#F2F2F2',
@@ -58,20 +58,20 @@ const GrayscaleColors: IGrayscaleColors = {
 }
 
 const BrandColors: IBrandColors = {
-  primary: '#003366',
-  primaryDisabled: `#757575`,
-  secondary: '#FFFFFFFF',
-  secondaryDisabled: `#757575`,
+  primary: '#ff2160',
+  primaryDisabled: `rgba(117, 7, 238, ${lightOpacity})`,
+  secondary: '#FFFFFF',
+  secondaryDisabled: `rgba(53, 130, 63, ${heavyOpacity})`,
   primaryLight: '#D9EAF7',
-  highlight: '#FCBA19',
-  primaryBackground: '#F2F2F2',
-  secondaryBackground: '#FFFFFF',
+  highlight: '#FFC200',
+  primaryBackground: '#000000',
+  secondaryBackground: '#000000',
   modalPrimary: '#003366',
   modalSecondary: '#FFFFFFFF',
-  modalPrimaryBackground: '#FFFFFF',
-  modalSecondaryBackground: '#F2F2F2',
+  modalPrimaryBackground: '#000000',
+  modalSecondaryBackground: '#000000',
   modalIcon: GrayscaleColors.darkGrey,
-  link: '#1A5A96',
+  link: '#FFFFFF',
   unorderedList: GrayscaleColors.darkGrey,
   unorderedListModal: GrayscaleColors.darkGrey,
   text: GrayscaleColors.white,
@@ -239,7 +239,7 @@ export const Buttons = StyleSheet.create({
   critical: {
     padding: 16,
     borderRadius: 4,
-    backgroundColor: '#D8292F',
+    backgroundColor: '#000000',
   },
   primary: {
     padding: 16,
@@ -254,31 +254,31 @@ export const Buttons = StyleSheet.create({
   primaryText: {
     ...TextTheme.normal,
     fontWeight: 'bold',
-    color: ColorPallet.brand.text,
+    color: ColorPallet.grayscale.white,
     textAlign: 'center',
   },
   primaryTextDisabled: {
     ...TextTheme.normal,
     fontWeight: 'bold',
-    color: ColorPallet.brand.text,
+    color: ColorPallet.grayscale.white,
     textAlign: 'center',
   },
   secondary: {
     padding: 16,
     borderRadius: 4,
     borderWidth: 2,
-    borderColor: ColorPallet.brand.primary,
+    borderColor: ColorPallet.grayscale.white,
   },
   secondaryDisabled: {
     padding: 16,
     borderRadius: 4,
     borderWidth: 2,
-    borderColor: ColorPallet.brand.secondaryDisabled,
+    borderColor: ColorPallet.grayscale.white,
   },
   secondaryText: {
     ...TextTheme.normal,
     fontWeight: 'bold',
-    color: ColorPallet.brand.primary,
+    color: ColorPallet.grayscale.white,
     textAlign: 'center',
   },
   secondaryTextDisabled: {
@@ -627,7 +627,7 @@ export const OnboardingTheme = {
     color: ColorPallet.brand.secondary,
   },
   pagerNavigationButton: {
-    color: ColorPallet.brand.primary,
+    color: ColorPallet.grayscale.white,
     fontWeight: 'bold',
     fontSize: 18,
   },
@@ -664,7 +664,7 @@ export const DialogTheme = {
 }
 
 const LoadingTheme = {
-  backgroundColor: ColorPallet.brand.primary,
+  backgroundColor: ColorPallet.brand.primaryBackground,
 }
 const PINEnterTheme = {
   image: {
@@ -693,16 +693,18 @@ export const Assets: IAssets = {
   svg: { ...BifoldImageAssets.svg, logo: Logo as React.FC },
   img: {
     logoSecondary: {
-      src: require('./assets/img/logo-large.png'),
+      src: require('./assets/img/InstntLogoOnly-old2-1.png'),
       aspectRatio: 1,
-      height: 120,
-      width: 120,
+      height: '33%',
+      width: '33%',
       resizeMode: 'contain',
     },
     logoPrimary: {
-      src: require('./assets/img/logo-large-white.png'),
-      height: 170,
-      width: 170,
+      src: require('./assets/img/InstntLogoOnly-old2-1.png'),
+      aspectRatio: 1,
+      height: 100,
+      width: 80,
+      resizeMode: 'contain',
     },
   },
 }

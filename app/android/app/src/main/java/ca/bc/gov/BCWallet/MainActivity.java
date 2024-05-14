@@ -1,4 +1,4 @@
-package ca.bc.gov.BCWallet;
+package org.instnt.multipass;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -40,7 +40,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "BCWallet";
+    return "InstntWallet";
   }
 
   /**

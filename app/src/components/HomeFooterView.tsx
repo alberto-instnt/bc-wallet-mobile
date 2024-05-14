@@ -1,55 +1,86 @@
-import { Button, ButtonType, testIdWithKey, useTheme } from '@hyperledger/aries-bifold-core'
-import React, { PropsWithChildren, useState } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { CredentialState } from '@aries-framework/core'
+import { useCredentialByState } from '@aries-framework/react-hooks'
+import { useTheme } from '@hyperledger/aries-bifold-core'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { StyleSheet, View } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { StyleSheet, View, Text, Image } from 'react-native'
 
-import { surveyMonkeyUrl, surveyMonkeyExitUrl } from '../constants'
-import WebDisplay from '../screens/WebDisplay'
+import { useNotifications } from '../hooks/notifications'
 
-interface HomeFooterViewProps extends PropsWithChildren {}
+const offset = 25
 
-const HomeFooterView = ({ children }: HomeFooterViewProps) => {
-  const { ColorPallet } = useTheme()
+interface HomeFooterViewProps {
+  children?: any
+}
+
+const HomeFooterView: React.FC<HomeFooterViewProps> = ({ children }) => {
+  const notifications = useNotifications()
+  const credentials = [
+    ...useCredentialByState(CredentialState.CredentialReceived),
+    ...useCredentialByState(CredentialState.Done),
+  ]
+  const { HomeTheme, TextTheme, Assets } = useTheme()
   const { t } = useTranslation()
-  const [surveyVisible, setSurveyVisible] = useState(false)
-
   const styles = StyleSheet.create({
-    feedbackContainer: {
-      marginTop: 10,
-      paddingHorizontal: 20,
-      paddingVertical: 20,
-      backgroundColor: ColorPallet.grayscale.white,
+    container: {
+      paddingHorizontal: offset,
+      paddingBottom: offset * 3,
     },
-    feedbackIcon: {
-      paddingRight: 10,
+
+    messageContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 35,
+      marginHorizontal: offset,
     },
   })
 
-  const toggleSurveyVisibility = () => setSurveyVisible(!surveyVisible)
+  const displayMessage = (credentialCount: number) => {
+    if (typeof credentialCount === 'undefined' && credentialCount >= 0) {
+      throw new Error('Credential count cannot be undefined')
+    }
+
+    let credentialMsg
+
+    if (credentialCount === 1) {
+      credentialMsg = (
+        <Text>
+          {t('Home.YouHave')} <Text style={{ fontWeight: TextTheme.bold.fontWeight }}>{credentialCount}</Text>{' '}
+          {t('Home.Credential')} {t('Home.InYourWallet')}
+        </Text>
+      )
+    } else if (credentialCount > 1) {
+      credentialMsg = (
+        <Text>
+          {t('Home.YouHave')} <Text style={{ fontWeight: TextTheme.bold.fontWeight }}>{credentialCount}</Text>{' '}
+          {t('Home.Credentials')} {t('Home.InYourWallet')}
+        </Text>
+      )
+    } else {
+      credentialMsg = t('Home.NoCredentials')
+    }
+
+    return (
+      <>
+        {notifications.total == 0 && (
+          <View style={[styles.messageContainer]}>
+            <Text adjustsFontSizeToFit style={[HomeTheme.welcomeHeader, { marginTop: offset, marginBottom: 20 }]}>
+              {t('Home.Welcome')}
+            </Text>
+            <Image source={Assets.img.logoPrimary.src} style={{ width: 90, height: 125 }} />
+          </View>
+        )}
+        <View style={[styles.messageContainer]}>
+          <Text style={[HomeTheme.credentialMsg, { marginTop: offset, textAlign: 'center' }]}>{credentialMsg}</Text>
+        </View>
+      </>
+    )
+  }
 
   return (
-    <View style={styles.feedbackContainer}>
-      <Button
-        title={t('Feedback.GiveFeedback')}
-        accessibilityLabel={t('Feedback.GiveFeedback')}
-        testID={testIdWithKey('GiveFeedback')}
-        onPress={toggleSurveyVisibility}
-        buttonType={ButtonType.Secondary}
-      >
-        <Icon
-          name="message-draw"
-          style={[styles.feedbackIcon, { color: ColorPallet.brand.primary }]}
-          size={26}
-          color={ColorPallet.grayscale.white}
-        />
-      </Button>
-      <WebDisplay
-        destinationUrl={surveyMonkeyUrl}
-        exitUrl={surveyMonkeyExitUrl}
-        visible={surveyVisible}
-        onClose={toggleSurveyVisibility}
-      />
+    <View>
+      <View style={styles.container}>{displayMessage(credentials.length)}</View>
       {children}
     </View>
   )

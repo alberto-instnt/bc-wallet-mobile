@@ -50,7 +50,7 @@ react {
     //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
     // hermesFlags = ["-O", "-output-source-map"]
 }
-
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 
@@ -93,18 +93,20 @@ android {
     }
 
     defaultConfig {
-        applicationId "ca.bc.gov.BCWallet"
+        applicationId "org.instnt.multipass"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode System.getenv("VERSION_CODE") ? System.getenv("VERSION_CODE").toInteger() : 1
         versionName System.getenv("VERSION_NAME") ? System.getenv("VERSION_NAME").toString() : "0.0.1"
 
         missingDimensionStrategy 'react-native-camera', 'general'
+        resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
         ndk {
             abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
         }
     }
     signingConfigs {
+        
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -120,6 +122,8 @@ android {
     }
     buildTypes {
         debug {
+            // Note: CodePush updates shouldn't be tested in Debug mode as they're overriden by the RN packager. However, because CodePush checks for updates in all modes, we must supply a key.
+            resValue "string", "CodePushDeploymentKey", '""'
             signingConfig signingConfigs.debug
             if (nativeArchitectures) {
                 ndk {
@@ -127,7 +131,19 @@ android {
                 }
             }
         }
+        releaseStaging {
+            resValue "string", "CodePushDeploymentKey", '"_MDZqkcHoyG_56ibYCeA6B-NBNwCY6HKTEAx3"'
+            // Note: It's a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues
+            // Add the following line if not already there
+            matchingFallbacks = ['release']
+            // Caution! In production, you need to generate your own keystore file.
+            // see https://reactnative.dev/docs/signed-apk-android.
+            signingConfig signingConfigs.debug
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
         release {
+            resValue "string", "CodePushDeploymentKey", '"Q3LTxzl44yUNB2n2s_XuInLDsC__ix2id4zux"'
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.release
@@ -138,8 +154,19 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-code-push')
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+
+    implementation 'com.github.stephenc.jcip:jcip-annotations:1.0-1'
+ 
+    implementation 'org.ow2.asm:asm:5.0.4'
+ 
+    implementation 'net.minidev:accessors-smart:1.2'
+ 
+    implementation 'net.minidev:json-smart:2.3'
+ 
+	implementation 'com.nimbusds:nimbus-jose-jwt:5.1'
 
     implementation 'net.java.dev.jna:jna:5.2.0'
     

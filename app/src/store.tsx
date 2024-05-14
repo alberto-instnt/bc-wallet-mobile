@@ -87,6 +87,8 @@ export enum BCLocalStorageKeys {
 export const initialState: BCState = {
   ...defaultState,
   developer: developerState,
+  //preferences: { ...defaultState.preferences, useVerifierCapability: true },
+  onboarding: { ...defaultState.onboarding, didConsiderPushNotifications: true },
   dismissPersonCredentialOffer: dismissPersonCredentialOfferState,
 }
 

@@ -31,12 +31,13 @@ const EndPage = (onTutorialCompleted: GenericFn, theme: ITheme['OnboardingTheme'
   const styles = StyleSheet.create({
     scrollView: {
       flex: 1,
-      backgroundColor: theme.container.backgroundColor,
-      padding: 20,
+      marginBottom: 20,
     },
     pageContainer: {
       height: '100%',
       justifyContent: 'space-between',
+      backgroundColor: theme.container.backgroundColor,
+      padding: 20,
     },
     controlsContainer: {
       marginBottom: 20,
@@ -51,18 +52,20 @@ const EndPage = (onTutorialCompleted: GenericFn, theme: ITheme['OnboardingTheme'
   })
   return (
     <View style={styles.pageContainer}>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        <View style={styles.imageContainer}>
-          <SecureImage {...imageDisplayOptions} />
-        </View>
-        <View style={{ marginBottom: 20 }}>
-          <Text style={[defaultStyle.headerText, { fontSize: 26 }]}>{t('Onboarding.PrivateConfidentialHeading')}</Text>
+      <View style={styles.imageContainer}>
+        <SecureImage {...imageDisplayOptions} />
+      </View>
+      <View>
+        <Text style={[defaultStyle.headerText]}>{t('Onboarding.PrivateConfidentialHeading')}</Text>
+      </View>
+      <ScrollView style={styles.scrollView}>
+        <View>
           <Text style={[defaultStyle.bodyText, { marginTop: 20 }]}>{t('Onboarding.PrivateConfidentialParagraph')}</Text>
         </View>
       </ScrollView>
       {!(store.onboarding.didCompleteTutorial && store.authentication.didAuthenticate) && (
         <View style={styles.controlsContainer}>
-          <ContentGradient backgroundColor={theme.container.backgroundColor} height={30} />
+          <ContentGradient backgroundColor={theme.container.backgroundColor} height={40} />
           <Button
             title={t('Onboarding.GetStarted')}
             accessibilityLabel={t('Onboarding.GetStarted')}
@@ -98,8 +101,8 @@ const StartPage = (theme: ITheme['OnboardingTheme']) => {
         <ScanShare {...imageDisplayOptions} />
       </View>
       <View style={{ marginBottom: 20 }}>
-        <Text style={[defaultStyle.headerText, { fontSize: 26 }]}>{t('Onboarding.DifferentWalletHeading')}</Text>
-        <Text style={[defaultStyle.bodyText, { marginTop: 20 }]}>{t('Onboarding.DifferentWalletParagraph')}</Text>
+        <Text style={[defaultStyle.headerText]}>{t('Onboarding.InstntHeading')}</Text>
+        <Text style={[defaultStyle.bodyText, { marginTop: 20 }]}>{t('Onboarding.InstntFirstParagraph')}</Text>
       </View>
     </ScrollView>
   )
@@ -112,8 +115,8 @@ const guides: Array<{
 }> = [
   {
     image: CredentialList,
-    title: 'Onboarding.DigitalCredentialsHeading',
-    body: 'Onboarding.DigitalCredentialsParagraph',
+    title: 'Onboarding.InstntAccessHeading',
+    body: 'Onboarding.InstntAccessParagraph',
   },
 ]
 
@@ -135,7 +138,7 @@ const CreatePageWith = (image: React.FC<SvgProps>, title: string, body: string, 
     <ScrollView style={{ padding: 20 }}>
       <View style={styles.imageContainer}>{image(imageDisplayOptions)}</View>
       <View style={{ marginBottom: 20 }}>
-        <Text style={[defaultStyle.headerText, { fontSize: 26 }]}>{t(title)}</Text>
+        <Text style={[defaultStyle.headerText]}>{t(title)}</Text>
         <Text style={[defaultStyle.bodyText, { marginTop: 25 }]}>{t(body)}</Text>
       </View>
     </ScrollView>

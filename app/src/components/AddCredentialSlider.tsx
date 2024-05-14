@@ -34,7 +34,7 @@ export default function AddCredentialSlider() {
       height: '100%',
     },
     modalView: {
-      backgroundColor: ColorPallet.grayscale.white,
+      backgroundColor: ColorPallet.brand.primary,
       borderTopStartRadius: 20,
       borderTopEndRadius: 20,
       shadowColor: '#000',
@@ -91,7 +91,7 @@ export default function AddCredentialSlider() {
       (c) => c.metadata.data[AnonCredsCredentialMetadataKey].credentialDefinitionId as string
     )
 
-    setShowGetPersonCredential(showPersonCredentialSelector(credentialDefinitionIDs))
+    //setShowGetPersonCredential(showPersonCredentialSelector(credentialDefinitionIDs))
   }, [credentials])
 
   useEffect(() => {

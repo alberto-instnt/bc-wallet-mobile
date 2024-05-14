@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import {
   Stacks,
   Screens,
@@ -18,10 +19,12 @@ import {
   ContainerProvider,
   MainContainer,
 } from '@hyperledger/aries-bifold-core'
+import { useDeepLinks } from '@hyperledger/aries-bifold-core/App/hooks/deep-links'
 import { useNavigation } from '@react-navigation/native'
 import React, { useEffect, useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Linking, StatusBar } from 'react-native'
+// import codePush from 'react-native-code-push'
 import { isTablet } from 'react-native-device-info'
 import Orientation from 'react-native-orientation-locker'
 import SplashScreen from 'react-native-splash-screen'
@@ -46,6 +49,15 @@ initLanguages(localization)
 const bifoldContainer = new MainContainer(container.createChildContainer()).init()
 const bcwContainer = new AppContainer(bifoldContainer).init()
 
+// const codePushOptions = {
+//   checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+//   installMode: codePush.InstallMode.IMMEDIATE,
+//   updateDialog: {
+//     appendReleaseDescription: true,
+//     title: 'A new update is available!',
+//   },
+// }
+
 const App = () => {
   useMemo(() => {
     initStoredLanguage().then()
@@ -55,72 +67,75 @@ const App = () => {
   const { navigate } = useNavigation()
   const toggleSurveyVisibility = () => setSurveyVisible(!surveyVisible)
 
-  const helpLink = 'https://www2.gov.bc.ca/gov/content/governments/government-id/bc-wallet/help'
+  //const helpLink = 'https://www2.gov.bc.ca/gov/content/governments/government-id/bc-wallet/help'
 
   if (!isTablet()) {
     Orientation.lockToPortrait()
   }
 
-  const settings = [
-    {
-      header: {
-        title: t('Settings.Help'),
-        icon: { name: 'help' },
-      },
-      data: [
-        {
-          title: t('Settings.HelpUsingBCWallet'),
-          accessibilityLabel: t('Settings.HelpUsingBCWallet'),
-          testID: testIdWithKey('HelpUsingBCWallet'),
-          onPress: () => Linking.openURL(helpLink),
-        },
-        {
-          title: t('Settings.GiveFeedback'),
-          accessibilityLabel: t('Settings.GiveFeedback'),
-          testID: testIdWithKey('GiveFeedback'),
-          onPress: toggleSurveyVisibility,
-        },
-        {
-          title: t('Settings.ReportAProblem'),
-          accessibilityLabel: t('Settings.ReportAProblem'),
-          testID: testIdWithKey('ReportAProblem'),
-          onPress: toggleSurveyVisibility,
-        },
-      ],
-    },
-    {
-      header: {
-        title: t('Settings.MoreInformation'),
-        icon: { name: 'info' },
-      },
-      data: [
-        {
-          title: t('Settings.TermsOfUse'),
-          accessibilityLabel: t('Settings.TermsOfUse'),
-          testID: testIdWithKey('TermsOfUse'),
-          onPress: () => navigate(Stacks.SettingStack as never, { screen: Screens.Terms } as never),
-        },
-        {
-          title: t('Settings.IntroductionToTheApp'),
-          accessibilityLabel: t('Settings.IntroductionToTheApp'),
-          testID: testIdWithKey('IntroductionToTheApp'),
-          onPress: () => navigate(Stacks.SettingStack as never, { screen: Screens.Onboarding } as never),
-        },
-        {
-          title: t('Settings.PlayWithBCWallet'),
-          accessibilityLabel: t('Settings.PlayWithBCWallet'),
-          testID: testIdWithKey('PlayWithBCWallet'),
-          onPress: () => Linking.openURL('https://digital.gov.bc.ca/digital-trust/showcase/'),
-        },
-      ],
-    },
-  ]
+  // const settings = [
+  //   {
+  //     header: {
+  //       title: t('Settings.Help'),
+  //       icon: { name: 'help' },
+  //     },
+  //     data: [
+  //       {
+  //         title: t('Settings.HelpUsingBCWallet'),
+  //         accessibilityLabel: t('Settings.HelpUsingBCWallet'),
+  //         testID: testIdWithKey('HelpUsingBCWallet'),
+  //         onPress: () => Linking.openURL(helpLink),
+  //       },
+  //       // {
+  //       //   title: t('Settings.GiveFeedback'),
+  //       //   accessibilityLabel: t('Settings.GiveFeedback'),
+  //       //   testID: testIdWithKey('GiveFeedback'),
+  //       //   onPress: toggleSurveyVisibility,
+  //       // },
+  //       {
+  //         title: t('Settings.ReportAProblem'),
+  //         accessibilityLabel: t('Settings.ReportAProblem'),
+  //         testID: testIdWithKey('ReportAProblem'),
+  //         onPress: toggleSurveyVisibility,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     header: {
+  //       title: t('Settings.MoreInformation'),
+  //       icon: { name: 'info' },
+  //     },
+  //     data: [
+  //       {
+  //         title: t('Settings.TermsOfUse'),
+  //         accessibilityLabel: t('Settings.TermsOfUse'),
+  //         testID: testIdWithKey('TermsOfUse'),
+  //         onPress: () => navigate(Stacks.SettingStack as never, { screen: Screens.Terms } as never),
+  //       },
+  //       {
+  //         title: t('Settings.IntroductionToTheApp'),
+  //         accessibilityLabel: t('Settings.IntroductionToTheApp'),
+  //         testID: testIdWithKey('IntroductionToTheApp'),
+  //         onPress: () => navigate(Stacks.SettingStack as never, { screen: Screens.Onboarding } as never),
+  //       },
+  //       {
+  //         title: t('Settings.PlayWithBCWallet'),
+  //         accessibilityLabel: t('Settings.PlayWithBCWallet'),
+  //         testID: testIdWithKey('PlayWithBCWallet'),
+  //         onPress: () => Linking.openURL('https://digital.gov.bc.ca/digital-trust/showcase/'),
+  //       },
+  //     ],
+  //   },
+  // ]
 
-  configuration.settings = settings
+  //configuration.settings = settings
 
   useEffect(() => {
     // Hide the native splash / loading screen so that our
     // RN version can be displayed.
+    // codePush.sync({
+    // installMode: codePush.InstallMode.IMMEDIATE,
+    // })
     SplashScreen.hide()
   }, [])
 
@@ -170,3 +185,4 @@ const App = () => {
 }
 
 export default App
+// export default codePush(codePushOptions)(App)
