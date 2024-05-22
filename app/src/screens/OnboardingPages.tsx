@@ -115,8 +115,8 @@ const guides: Array<{
 }> = [
   {
     image: CredentialList,
-    title: 'Onboarding.InstntAccessHeading',
-    body: 'Onboarding.InstntAccessParagraph',
+    title: 'Onboarding.InstntMultipassHeading',
+    body: 'Onboarding.InstntMultipassParagraph',
   },
 ]
 

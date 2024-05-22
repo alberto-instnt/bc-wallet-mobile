@@ -190,7 +190,7 @@ const translation = {
     "Banner": "Remote Troubleshoot on. ID: {{ sessionId }} (FR)",
   },
   "Home":{
-    "Welcome": "Instnt Access",
+    "Welcome": "Instnt Multipass",
   }
 }
 
