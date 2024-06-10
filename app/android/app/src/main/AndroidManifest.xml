@@ -53,7 +53,7 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
         <data android:scheme="https"
-            android:host="stage-api.instnt.org"               
+            android:host="stage2-api.instnt.org"               
             android:pathPrefix="/ssi" />
       </intent-filter>
       <intent-filter android:autoVerify="true">
