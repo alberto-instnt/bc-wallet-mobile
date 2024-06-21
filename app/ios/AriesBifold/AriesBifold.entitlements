@@ -7,6 +7,7 @@
 		<string>applinks:sandbox2-api.instnt.org</string>
 		<string>applinks:preprod2-api.instnt.org</string>
 		<string>applinks:dev2-api.instnt.org</string>
+		<string>applinks:stage2-api.instnt.org</string>
 	</array>
 </dict>
 </plist>
