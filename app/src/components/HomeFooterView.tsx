@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CredentialState } from '@aries-framework/core'
 import { useCredentialByState } from '@aries-framework/react-hooks'
 import { useTheme } from '@hyperledger/aries-bifold-core'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, View, Text, Image, Dimensions } from 'react-native'
 
 import { useNotifications } from '../hooks/notifications'
 
@@ -12,6 +11,12 @@ const offset = 25
 
 interface HomeFooterViewProps {
   children?: any
+}
+
+// Function to scale the font size based on screen width
+const scaleFontSize = (base: number) => {
+  const { width } = Dimensions.get('window')
+  return base * (width / 375)
 }
 
 const HomeFooterView: React.FC<HomeFooterViewProps> = ({ children }) => {
@@ -22,17 +27,22 @@ const HomeFooterView: React.FC<HomeFooterViewProps> = ({ children }) => {
   ]
   const { HomeTheme, TextTheme, Assets } = useTheme()
   const { t } = useTranslation()
+
   const styles = StyleSheet.create({
     container: {
       paddingHorizontal: offset,
       paddingBottom: offset * 3,
     },
-
     messageContainer: {
       alignItems: 'center',
       justifyContent: 'center',
       marginTop: 35,
       marginHorizontal: offset,
+    },
+    welcomeHeader: {
+      ...HomeTheme.welcomeHeader,
+      fontSize: scaleFontSize(35), // Base font size is 24, scaled according to screen width
+      textAlign: 'center',
     },
   })
 
@@ -65,7 +75,7 @@ const HomeFooterView: React.FC<HomeFooterViewProps> = ({ children }) => {
       <>
         {notifications.total == 0 && (
           <View style={[styles.messageContainer]}>
-            <Text adjustsFontSizeToFit style={[HomeTheme.welcomeHeader, { marginTop: offset, marginBottom: 20 }]}>
+            <Text adjustsFontSizeToFit style={[styles.welcomeHeader, { marginTop: offset, marginBottom: 20 }]}>
               {t('Home.Welcome')}
             </Text>
             <Image source={Assets.img.logoPrimary.src} style={{ width: 90, height: 125 }} />

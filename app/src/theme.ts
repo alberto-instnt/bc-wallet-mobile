@@ -58,10 +58,10 @@ const GrayscaleColors: IGrayscaleColors = {
 }
 
 const BrandColors: IBrandColors = {
-  primary: '#b25978',
+  primary: '#466ea7',
   secondary: '#FFFFFF',
-  primaryDisabled: '#72579a',
-  secondaryDisabled: '#72579a',
+  primaryDisabled: '#b25978',
+  secondaryDisabled: '#b25978',
   primaryLight: '#D9EAF7',
   highlight: '#FFC200',
   primaryBackground: '#1e1827',

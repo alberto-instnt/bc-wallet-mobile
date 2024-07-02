@@ -46,7 +46,7 @@ const translation = {
     "AddFirstCredential": "Add your first credential"
   },
   "Onboarding": {
-    "InstntHeading": "Instnt",
+    "InstntHeading": "AcmeBank",
     "InstntFirstParagraph": "Instnt (www.instnt.org) is a managed customer acceptance platform for businesses that want to make it easy for customers to signup and be accepted and onboarded.",
     "InstntMultipassHeading": "Instnt Multipass",
     "InstntMultipassParagraph": "Instnt Multipass (tm) allows you to signup and be accepted by businesses with one click or a scan of a QR-code. Signup once for a product or service of a business with Instnt, get verified, and potentially never signup again as you access other products or services from the same business or other businesses. Instnt uses advanced block-chain based decentralized identity technology and verifiable credential standards to make single signup possible.",
@@ -61,7 +61,7 @@ const translation = {
     "Link2": "Instnt Wallet showcase",
   },
   "Screens": {
-    "Onboarding": "Instnt Wallet",
+    "Onboarding": "AcmeBank",
     "Terms": "Terms of Use",
     "Settings": "Menu",
     "Preface": "Instnt Wallet",
@@ -191,7 +191,7 @@ const translation = {
     "Banner": "Remote Troubleshoot on. ID: {{ sessionId }}"
   },
   "Home":{
-    "Welcome": "Instnt Multipass",
+    "Welcome": "Welcome to AcmeBank",
   }
 }
 
