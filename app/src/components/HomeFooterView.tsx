@@ -78,7 +78,7 @@ const HomeFooterView: React.FC<HomeFooterViewProps> = ({ children }) => {
             <Text adjustsFontSizeToFit style={[styles.welcomeHeader, { marginTop: offset, marginBottom: 20 }]}>
               {t('Home.Welcome')}
             </Text>
-            <Image source={Assets.img.logoPrimary.src} style={{ width: 125, height: 125 }} />
+            <Image source={Assets.img.logoPrimary.src} style={{ width: 160, height: 160 }} />
           </View>
         )}
         <View style={[styles.messageContainer]}>
