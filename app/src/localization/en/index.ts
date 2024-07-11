@@ -25,25 +25,27 @@ const translation = {
   },
   "CameraDisclosure": {
     "AllowCameraUse": "Allow camera use",
-    "CameraDisclosure": "The camera is used to scan QR codes that initiate a credential offer or credential request. No information about the images is stored, used for analytics, or shared.",
-    "ToContinueUsing": "To continue using the Instnt Wallet scan feature, please allow camera permissions.",
+    "CameraDisclosure": "The camera is used to scan QR codes that initiate a pass offer or pass request. No information about the images is stored, used for analytics, or shared.",
+    "ToContinueUsing": "To continue using the Acmebank Wallet scan feature, please allow camera permissions.",
     "Allow": "Allow",
     "OpenSettings": "Open settings",
   },
   "Biometry": {
     "Toggle": "Toggle Biometrics",
     "EnabledText1": "Log in with your phone's biometrics instead of your wallet PIN.",
-    "EnabledText1Bold": "you will need to use biometrics to open your Instnt Wallet.",
-    "EnabledText2": "This means all fingerprint and facial data added on this phone can be used to access your Instnt Wallet.",
-    "EnabledText3": "Anyone who can access your phone with biometrics can access your Instnt Wallet.",
+    "EnabledText1Bold": "you will need to use biometrics to open your Acmebank Wallet.",
+    "EnabledText2": "This means all fingerprint and facial data added on this phone can be used to access your Acmebank Wallet.",
+    "EnabledText3": "Anyone who can access your phone with biometrics can access your Acmebank Wallet.",
     "EnabledText3Bold": "Ensure only you have access to your wallet.",
     "Warning": "Ensure only you have access to your wallet.",
     "UseToUnlock": "Use biometrics to unlock wallet?"
   },
   "Credentials": {
-    "AddCredential": "Add Credential",
+    "AddCredential": "Add Pass",
     "EmptyList": "Your wallet is empty.",
-    "AddFirstCredential": "Add your first credential"
+    "AddFirstCredential": "Add your first pass",
+    "CredentialsNotFound": "Passes not found",
+    "CredentialDetails": "Pass Details",
   },
   "Onboarding": {
     "InstntHeading": "AcmeBank",
@@ -65,6 +67,9 @@ const translation = {
     "Terms": "Terms of Use",
     "Settings": "Menu",
     "Preface": "Instnt Wallet",
+    "Credentials": 'Passes',
+    "CredentialDetails": 'Pass Details',
+    "CredentialOffer": 'Pass Offer',
   },
   "PersonCredentialNotification": {
     "Title": "Get your Person credential",
@@ -192,7 +197,37 @@ const translation = {
   },
   "Home":{
     "Welcome": "Welcome to AcmeBank",
-  }
+    "NoCredentials": "You have no passes in your wallet.",
+    "Credentials": "Passes",
+    "Credential": "Pass",
+  },
+  "TabStack": {
+    "Home": "Home",
+    "Scan": "Scan",
+    "Credentials": "Passes",
+  },
+  "CredentialOffer": {
+    "CredentialOffer": "Pass Offer",
+    "ThisIsTakingLongerThanExpected": "This is taking Longer than expected. Check back later for your new pass.",
+    "RejectThisCredential?": "Reject this Pass?",
+    "AcceptingCredential": "Accepting Pass",
+    "SuccessfullyAcceptedCredential": "Successfully Accepted Pass",
+    "RejectingCredential": "Rejecting Pass",
+    "SuccessfullyRejectedCredential": "Successfully Rejected Pass",
+    "CredentialNotFound": "Pass not found",
+    "CredentialAccepted": "Pass Accepted",
+    "CredentialRejected": "Pass Rejected",
+    "CredentialAddedToYourWallet": "Pass added to your wallet",
+    "CredentialDeclined": "Pass declined",
+    "CredentialOnTheWay": "Your pass is on the way",
+    "NewCredentialOffer": "New Pass Offer",
+    "IsOfferingYouACredential": "is offering you a pass",
+    "ConfirmDeclinedTitle": "Are you sure you want to decline this pass?",
+    "ConfirmDeclinedMessage": "In order to receive the pass offer again, you will need to reapply with the issuer.",
+    "ConfirmDecline": "Yes, decline this pass",
+    "AbortDecline": "No, go back",
+    "DeclineTitle": "Decline Pass",
+  },
 }
 
 export default translation

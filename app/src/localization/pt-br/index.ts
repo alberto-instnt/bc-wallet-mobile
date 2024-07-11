@@ -26,7 +26,7 @@ const translation = {
   "CameraDisclosure": {
     "AllowCameraUse": "Allow camera use (PT-BR)",
     "CameraDisclosure": "A câmera é usada para escanear QR Codes para processamento imediato no dispositivo. Nenhuma informação sobre as imagens é armazenada, usada para análise, ou compartilhada.",
-    "ToContinueUsing": "To continue using the BC Wallet scan feature, please allow camera permissions. (PT-BR)",
+    "ToContinueUsing": "To continue using the Acmebank Wallet scan feature, please allow camera permissions. (PT-BR)",
     "Allow": "Allow (PT-BR)",
     "OpenSettings": "Open settings (PT-BR)",
   },
@@ -41,9 +41,9 @@ const translation = {
     "UseToUnlock": "Use biometrics to unlock wallet? (PT-BR)",
   },
   "Credentials": {
-    "AddCredential": "Add Credential (PT-BR)",
+    "AddCredential": "Add Pass (PT-BR)",
     "EmptyList": "Your wallet is empty. (PT-BR)",
-    "AddFirstCredential": "Add your first credential (PT-BR)"
+    "AddFirstCredential": "Add your first pass (PT-BR)"
   },
   "Onboarding": {
     "DifferentWalletHeading": "A different smart wallet (PT-BR)",
@@ -191,6 +191,9 @@ const translation = {
   },
   "Home":{
     "Welcome": "Instnt Multipass",
+    "NoCredentials": "You have no passes in your wallet.",
+    "Credentials": "Passes",
+    "Credential": "Pass",
   }
 }
 

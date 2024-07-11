@@ -47,13 +47,13 @@ const Comp: FunctionComponent<TipProps> = ({ item, width, header }) => {
     tipHeader: {
       paddingBottom: 3,
       fontSize: 26,
-      fontFamily: 'Georgia',
+      fontFamily: 'BCSans-Regular',
       fontWeight: 'bold',
       color: 'white',
     },
     tipText: {
       fontSize: 26,
-      fontFamily: 'Georgia',
+      fontFamily: 'BCSans-Regular',
       fontWeight: 'bold',
       color: 'white',
       marginTop: 10,
