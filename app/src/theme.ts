@@ -523,7 +523,7 @@ export const ChatTheme = {
     alignSelf: 'flex-end',
   },
   leftBubble: {
-    backgroundColor: ColorPallet.brand.secondaryBackground,
+    backgroundColor: ColorPallet.brand.primaryLight,
     borderRadius: 4,
     padding: 16,
     marginLeft: 16,
