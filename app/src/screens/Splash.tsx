@@ -321,7 +321,7 @@ const Splash = () => {
 
         const options = {
           config: {
-            label: store.preferences.walletName || 'Instnt Wallet',
+            label: store.preferences.walletName || 'AcmeBank',
             walletConfig: {
               id: credentials.id,
               key: credentials.key,

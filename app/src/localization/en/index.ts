@@ -26,16 +26,16 @@ const translation = {
   "CameraDisclosure": {
     "AllowCameraUse": "Allow camera use",
     "CameraDisclosure": "The camera is used to scan QR codes that initiate a pass offer or pass request. No information about the images is stored, used for analytics, or shared.",
-    "ToContinueUsing": "To continue using the Acmebank Wallet scan feature, please allow camera permissions.",
+    "ToContinueUsing": "To continue using the AcmeBank Wallet scan feature, please allow camera permissions.",
     "Allow": "Allow",
     "OpenSettings": "Open settings",
   },
   "Biometry": {
     "Toggle": "Toggle Biometrics",
     "EnabledText1": "Log in with your phone's biometrics instead of your wallet PIN.",
-    "EnabledText1Bold": "you will need to use biometrics to open your Acmebank Wallet.",
-    "EnabledText2": "This means all fingerprint and facial data added on this phone can be used to access your Acmebank Wallet.",
-    "EnabledText3": "Anyone who can access your phone with biometrics can access your Acmebank Wallet.",
+    "EnabledText1Bold": "you will need to use biometrics to open your AcmeBank Wallet.",
+    "EnabledText2": "This means all fingerprint and facial data added on this phone can be used to access your AcmeBank Wallet.",
+    "EnabledText3": "Anyone who can access your phone with biometrics can access your AcmeBank Wallet.",
     "EnabledText3Bold": "Ensure only you have access to your wallet.",
     "Warning": "Ensure only you have access to your wallet.",
     "UseToUnlock": "Use biometrics to unlock wallet?"
