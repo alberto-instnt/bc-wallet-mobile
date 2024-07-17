@@ -26,7 +26,7 @@ const translation = {
   "CameraDisclosure": {
     "AllowCameraUse": "Allow camera use (PT-BR)",
     "CameraDisclosure": "A câmera é usada para escanear QR Codes para processamento imediato no dispositivo. Nenhuma informação sobre as imagens é armazenada, usada para análise, ou compartilhada.",
-    "ToContinueUsing": "To continue using the Acmebank Wallet scan feature, please allow camera permissions. (PT-BR)",
+    "ToContinueUsing": "To continue using the AcmeBank Wallet scan feature, please allow camera permissions. (PT-BR)",
     "Allow": "Allow (PT-BR)",
     "OpenSettings": "Open settings (PT-BR)",
   },
