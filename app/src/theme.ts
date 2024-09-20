@@ -58,18 +58,18 @@ const GrayscaleColors: IGrayscaleColors = {
 }
 
 const BrandColors: IBrandColors = {
-  primary: '#466ea7',
+  primary: '#1E3079',
   secondary: '#FFFFFF',
-  primaryDisabled: '#b25978',
-  secondaryDisabled: '#b25978',
+  primaryDisabled: '#FAD559',
+  secondaryDisabled: '#FAD559',
   primaryLight: '#D9EAF7',
   highlight: '#FFC200',
-  primaryBackground: '#1e1827',
-  secondaryBackground: '#1e1827',
+  primaryBackground: '#000000',
+  secondaryBackground: '#000000',
   modalPrimary: '#003366',
   modalSecondary: '#FFFFFFFF',
-  modalPrimaryBackground: '#1e1827',
-  modalSecondaryBackground: '#1e1827',
+  modalPrimaryBackground: '#000000',
+  modalSecondaryBackground: '#000000',
   modalIcon: GrayscaleColors.darkGrey,
   link: '#FFFFFF',
   unorderedList: GrayscaleColors.darkGrey,
@@ -260,7 +260,7 @@ export const Buttons = StyleSheet.create({
   primaryTextDisabled: {
     ...TextTheme.normal,
     fontWeight: 'bold',
-    color: ColorPallet.grayscale.white,
+    color: ColorPallet.grayscale.black,
     textAlign: 'center',
   },
   secondary: {
